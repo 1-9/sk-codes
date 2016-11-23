@@ -11,5 +11,3 @@ Building.prototype.countFloors = function countFloors() {
 
 let myHouse = new Building(2, 'house');
 console.log(myHouse.countFloors()); // 2
-
-console.log(myHouse);
