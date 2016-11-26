@@ -13,4 +13,16 @@ function b() {
   apple = 'apple';
 }
 
-a();
+a(); // appl
+
+function c() {
+  var apple = 'appl';
+  d();
+
+  function d() {
+    apple = 'apple';
+  }
+  console.log(apple);
+}
+
+c(); // apple
