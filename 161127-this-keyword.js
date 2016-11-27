@@ -1,4 +1,4 @@
-// 'this' keyword in comments is used with quotes
+// to specify 'this' keyword in comments surrounded 'this' with quotes
 
 let accord = {
   company: 'honda',
