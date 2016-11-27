@@ -41,5 +41,5 @@ let tree2 = {
     }]
   }]
 };
-depthFirstSearch(tree1);
-depthFirstSearch(tree2);
+console.log(depthFirstSearch(tree1).toString() === [1, 2, 3, 4, 5].toString());
+console.log(depthFirstSearch(tree2).toString() === [5, 4, 3, 2, 1].toString());
