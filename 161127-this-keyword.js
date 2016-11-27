@@ -52,8 +52,8 @@ let shared = {
 
 // rule 1 is obj.fn(), if the function fn has a 'this' binding
 // it will be bound to the object obj
-// refactored shared mileageCaluculator to shared object
-// accord.mileageCaluculator(100);
+// refactored mileageCaluculator to shared object
+// accord.mileageCaluculator(100); // will no longer work
 
 // rule 2 is obj.fn.call(this, arguments) or obj.fn.apply(this, [arguments])
 shared.mileageCaluculator.call(accord, 100);
