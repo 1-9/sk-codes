@@ -28,3 +28,13 @@ var bar = function () {
 
 bar(); // 2
 setTimeout(bar, 100); // 2
+
+function Animal(sound) {
+  this.says = sound;
+}
+
+let cat = new Animal('meow');
+let dog = new Animal('bow');
+
+console.log(cat);
+console.log(dog);
