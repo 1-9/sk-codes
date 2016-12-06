@@ -16,6 +16,7 @@ let timer = function () {
     console.log(this.message);
   }.bind(obj1), 1000);
 };
+
 timer.call(obj1);
 
 let name = 'hello';
