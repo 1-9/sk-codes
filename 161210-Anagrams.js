@@ -1,5 +1,6 @@
 function Anagrams(str) {
   var ans = [];
+
   function sub(s, builder) {
     if (builder.length === str.length) {
       ans.push(builder);
