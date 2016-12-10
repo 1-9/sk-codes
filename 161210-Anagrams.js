@@ -14,5 +14,5 @@ function Anagrams(str) {
   return ans;
 }
 
-console.log(6, '161210-Anagrams.js', Anagrams('ab'));
-console.log(7, '161210-Anagrams.js', Anagrams('abc'));
+console.log(Anagrams('ab')); // [ 'ab', 'ba' ]
+console.log(Anagrams('abc')); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
