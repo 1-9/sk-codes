@@ -39,3 +39,28 @@ Object.defineProperty(obj2, "a", {
 
 console.dir(obj1, { depth: null });
 console.dir(obj2, { depth: null });
+
+
+let obj3 = {
+  get a() {
+    return 2;
+  }
+};
+
+Object.defineProperty(
+  obj3,
+  "b", {
+    get: function () {
+      return this.a * 2;
+    }
+  }
+);
+
+console.dir(obj3, { depth: null });
+console.dir(obj3.a, { depth: null });
+console.dir(obj3.b, { depth: null });
+
+let a1 = [1, 2, 3];
+for (let i in a1) {
+  console.log(65, '161212-Object-Prototype.js', a1[i]);
+}
