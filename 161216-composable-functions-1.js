@@ -1,6 +1,6 @@
 let Box = x => ({
   map: f => Box(f(x)),
-  fold: f => f(x),
+  fold: f => f(x)
 });
 
 let nextCharAtNumber = str => Box(str)
