@@ -24,9 +24,9 @@ let a = new Bar('a', 1);
 
 let b = new Foo('b');
 
-console.log(24, '161226-Object-Prototype.js', b.myName());
-console.log(25, '161226-Object-Prototype.js', a.myName());
-console.log(26, '161226-Object-Prototype.js', a.myAge());
-console.log(27, '161226-Object-Prototype.js', Bar.prototype.isPrototypeOf(a));
-console.log(27, '161226-Object-Prototype.js', Foo.prototype.isPrototypeOf(a));
-console.log(27, '161226-Object-Prototype.js', Foo.prototype.isPrototypeOf(b));
+console.log(27, '161226-Object-Prototype.js', b.myName());
+console.log(28, '161226-Object-Prototype.js', a.myName());
+console.log(29, '161226-Object-Prototype.js', a.myAge());
+console.log(30, '161226-Object-Prototype.js', Bar.prototype.isPrototypeOf(a));
+console.log(31, '161226-Object-Prototype.js', Foo.prototype.isPrototypeOf(a));
+console.log(32, '161226-Object-Prototype.js', Foo.prototype.isPrototypeOf(b));
