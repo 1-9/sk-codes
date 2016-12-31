@@ -1,0 +1,48 @@
+* Canvas API Notes
+
+** Attributes
+
+*** Length
+
+*** Width
+
+** Methods
+
+*** getContext()
+
+*** toDateUrl()
+
+*** toBlob()
+
+** Four things you can do with Graphics Context
+
+*** Drawing/Painting
+
+*** Text
+
+*** Add Images
+
+*** Video Processing
+
+
+** Drawing/Painting
+
+*** Drawing lines - context.beginPath, then moveTo some random coordinate, then lineTo, then fillStyle, then finally Stroke to see the lines/drawing
+
+** Translate - translates the object to new center
+
+** Rotate - rotates the object by a given degree
+
+** Scale - scales the object
+
+** Transform can do everything translate, rotate and scale does and even more
+
+** Transform takes in 6 numbers which is super powerful
+
+** fillStyle 
+
+*** we can set fillStyle to a gradient or a valid css style string like rgba(), rgba(), hsl()..etc
+
+*** we can set fillStyle to a pattern from an image and create a pattern
+
+
