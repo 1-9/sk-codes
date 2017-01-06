@@ -1,5 +1,4 @@
-function Animal(type, age) {
-  this.type = type;
+function Animal(age) {
   this.age = age;
 }
 
@@ -22,5 +21,6 @@ let p1 = new Person('H', 29);
 
 let cat = new Animal('cat', 2);
 
-console.log(25, '170104-Matrix-Determinant.js', p1.getAge());
-console.log(26, '170104-Inheritance.js', cat.getAge());
+console.log(25, '170104-Matrix-Determinant.js', p1);
+console.log(26, '170104-Inheritance.js', cat);
+
