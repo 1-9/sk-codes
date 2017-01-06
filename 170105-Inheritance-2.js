@@ -21,3 +21,4 @@ let cat = Object.create(Animal);
 cat.init('cat', 2);
 console.log(22, '170105-Inheritance-2.js', p1);
 console.log(23, '170105-Inheritance-2.js', cat);
+

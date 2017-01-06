@@ -24,3 +24,4 @@ let cat = new Animal('cat', 2);
 console.log(25, '170104-Matrix-Determinant.js', p1);
 console.log(26, '170104-Inheritance.js', cat);
 
+
