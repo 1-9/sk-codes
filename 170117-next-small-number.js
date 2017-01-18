@@ -15,8 +15,26 @@
 // test data only employs positive integers.
 
 function nextSmaller(n) {
-  while (n <= n % 10) {
-    let nArray = n.toString().split('');
-  }
+  let nArray = n.toString().split('');
+  let ans = [];
+  let sub = function (nums, combo) {
+    if (combo.length === nArray.length) {
+      ans.push(parseInt(combo.join('')));
+    } else {
+      for (let i = 0; i < nums.length; i++) {
+        sub(nums.slice(0, i).concat(nums.slice(i + 1)), combo.concat(nums[i]));
+      }
+    }
+  };
+  sub(nArray, []);
 
+  ans = ans.sort(function (a, b) {
+    return b - a;
+  }).filter(function (num) {
+    return num.toString().length === nArray.length && n > num;
+  });
+
+  return ans[0] || -1;
 }
+
+nextSmaller(721);
