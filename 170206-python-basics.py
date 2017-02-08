@@ -3,9 +3,11 @@ print('greater' if 8 > 9 else 'lesser')
 
 
 def generate_numbers(num):
-    num += 1
-    yield num
+    i = 0
+    while i < num:
+        i += 1
+        yield i
 
 
-for num in range(0, 10):
-    print(generate_numbers(num))
+for num in generate_numbers(11):
+    print(num)
