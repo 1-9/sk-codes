@@ -1,3 +1,4 @@
+import sys
 print('greater' if 8 > 5 else 'lesser')
 print('greater' if 8 > 9 else 'lesser')
 
@@ -11,3 +12,5 @@ def generate_numbers(num):
 
 for num in generate_numbers(11):
     print(num)
+
+print(sys.version)
