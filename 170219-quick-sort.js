@@ -26,6 +26,6 @@ function quickSort(arr) {
 }
 
 // test quickSort function
-console.log(25, '170216-insertion-sort.js', quickSort([8, 3, 5, 1, 9])); // [ 1, 3, 5, 8, 9 ]
-console.log(25, '170216-insertion-sort.js', quickSort([8, 3, -5, -4, 1, 9])); //[ -5, -4, 1, 3, 8, 9 ]
-console.log(25, '170216-insertion-sort.js', quickSort([-8, -3, -5, -0, 1, 9])); //[ -8, -5, -3, -0, 1, 9 ]
+console.log(25, '170216-quick-sort.js', quickSort([8, 3, 5, 1, 9])); // [ 1, 3, 5, 8, 9 ]
+console.log(25, '170216-quick-sort.js', quickSort([8, 3, -5, -4, 1, 9])); //[ -5, -4, 1, 3, 8, 9 ]
+console.log(25, '170216-quick-sort.js', quickSort([-8, -3, -5, -0, 1, 9])); //[ -8, -5, -3, -0, 1, 9 ]
