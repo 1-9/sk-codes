@@ -49,7 +49,12 @@ Car.prototype.getMiles = function getMiles() {
 var camry = new Car('red', 'toyota', 100000);
 console.log(33, '170222-this.js', camry);
 console.log(36, '170222-this.js', camry.__proto__);
+camry.score = 99;
 camry.getMiles();
+
+console.log(55, '170222-this.js', camry.hasOwnProperty('getMiles'));
+console.log(56, '170222-this.js', camry.hasOwnProperty('score'));
+console.log(57, '170222-this.js', Car.hasOwnProperty('getMiles'));
 
 // 5. steTimeout this will always be global
 setTimeout(function hello() {
