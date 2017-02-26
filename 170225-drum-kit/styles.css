@@ -1,0 +1,16 @@
+.keys {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  transition: all 1s;
+}
+
+.playing {
+  border: 5px solid #1f71ad;
+}
+
+span {
+  padding: 20px;
+}
