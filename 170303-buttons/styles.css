@@ -1,7 +1,31 @@
-.box1 {
-  background-color: green;
+body {
+  background-color: #E0AE23;
+  font-family: Operator Mono;
+  color: #DAD2D8;
 }
 
-.box2 {
-  background-color: red;
+p {
+  font-weight: bold;
+  text-align: center;
+  font-size: 100px;
+}
+
+.top-content {
+  border-radius: 10px;
+  background-color: #0F8B8D;
+}
+
+.button-container {
+  text-align: center;
+}
+
+button {
+  font-family: Operator Mono;
+  color: #DAD2D8;
+  background-color: #0F8B8D;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 40px;
 }
