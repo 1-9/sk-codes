@@ -13,3 +13,6 @@
 // parentheses '(' and/or closed parentheses ')'                                               //
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
+function validParentheses(parens) {
+  //TODO
+}
