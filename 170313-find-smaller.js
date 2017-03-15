@@ -10,3 +10,11 @@
 // of this same kata, head over to the much tougher version How many are smaller than me II?                    //
 //                                                                                                              //
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function smaller(nums) {
+  return nums.map((n, i) => {
+    return nums.slice(i).filter(v => v < n).length;
+  });
+}
+
+console.log(20, '170313-find-smaller.js', smaller([1, 2, 0]));
