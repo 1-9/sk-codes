@@ -14,5 +14,17 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 function validParentheses(parens) {
-  //TODO
+  let parensStack = [parens[0]];
+  for (var i = 1; i < parens.length; i++) {
+    if (parensStack[parensStack.length - 1] === '(' && parens[i] === ')') {
+      parensStack.pop();
+    } else {
+      parensStack.push(parens[i]);
+    }
+  }
+  return !parensStack.length;
 }
+
+console.log(36, '170317-valid-paranthesis.js', validParentheses('()')); // true
+console.log(36, '170317-valid-paranthesis.js', validParentheses('())(')); // false
+console.log(36, '170317-valid-paranthesis.js', validParentheses('(())())))')); // false
