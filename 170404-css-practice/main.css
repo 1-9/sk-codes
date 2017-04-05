@@ -1,0 +1,27 @@
+.one {
+  background-color: yellow;
+  min-height: 300px;
+  position: relative;
+}
+
+.columns {
+  width: 325px;
+  margin: 20px;
+  position: absolute;
+  min-height: 250px;
+}
+
+.right {
+  right: 0px;
+  background-color: green
+}
+
+.left {
+  background-color: red;
+}
+
+.three {
+  background-color: orange;
+  min-height: 50px;
+  text-align: center;
+}
