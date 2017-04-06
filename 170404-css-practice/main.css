@@ -4,8 +4,19 @@
   position: relative;
 }
 
+@media (min-width: 801px) {
+  .columns {
+    width: 600px;
+  }
+}
+
+@media (max-width: 800px) {
+  .columns {
+    width: 300px;
+  }
+}
+
 .columns {
-  width: 325px;
   margin: 20px;
   position: absolute;
   min-height: 250px;
