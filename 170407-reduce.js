@@ -3,9 +3,9 @@ Array.prototype.skreduce = function skreduce(cb) {
     return this[0];
   };
   var ans = this[0];
-  for (var i = 1; i < this.length; i++) {
-    ans = cb(ans, this[i]);
-  }
+  this.slice(1).forEach(function (val) {
+    ans = cb(ans, val);
+  });
   return ans;
 };
 
