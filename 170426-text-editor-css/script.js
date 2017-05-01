@@ -25,4 +25,21 @@ window.onload = function () {
   }
   good(1, 2, 3);
 
+  let handler = function hello() {
+    console.log(handler, hello);
+  };
+
+  handler(); // works as expected
+
+  handler = 9;
+
+  handler(); // handler got reassigned causing ---> ERROR
+
+  var foo = 'foo';
+  (function bob() {
+    var foo = 'foo1';
+    console.log(foo);
+  })();
+  console.log(foo);
+
 };
