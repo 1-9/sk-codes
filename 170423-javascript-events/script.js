@@ -14,4 +14,41 @@ window.onload = function () {
     removeEventText.innerText = 'added';
   });
 
+  function Dog(name, gender) {
+    this.name = name;
+    this.gender = gender;
+  }
+
+  Dog.mainDog = function () {
+    return this.name;
+  };
+
+  Dog.prototype.names = function () {
+    return this.name;
+  };
+
+  let snickers = new Dog('snickers', 'male');
+  Dog.mainDog();
+  console.log(snickers);
+
+  class Cat {
+    constructor(name, gender) {
+      this.name = name;
+      this.gender = gender;
+    }
+
+    names() {
+      return this.name;
+    }
+
+    static mainDog() {
+      return this.name;
+    }
+  }
+
+  console.log(Cat.mainDog());
+  Cat.mainDog();
+
+  let miky = new Cat('miky', 'male');
+  console.log(miky);
 };
