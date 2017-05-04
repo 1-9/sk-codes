@@ -51,4 +51,17 @@ window.onload = function () {
 
   let miky = new Cat('miky', 'male');
   console.log(miky);
+
+  function* pauseExecution() {
+    for (let i = 0; i < 10; i++) {
+      yield i;
+    }
+  }
+
+  let a = pauseExecution();
+
+  for (const val of a) {
+    console.log(val);
+  }
+
 };
