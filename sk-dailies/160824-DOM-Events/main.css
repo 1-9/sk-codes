@@ -1,0 +1,23 @@
+.divClass {
+  width: 500px;
+  height: 100px;
+  background-color: red;
+}
+
+.newDivClass {
+  width: 500px;
+  height: 100px;
+  background-color: red;
+}
+
+.spanClass {
+  display: block;
+  height: 100px;
+  background-color: green;
+}
+
+.buttonClass {
+  display: block;
+  height: 50px;
+  background-color: yellow;
+}
