@@ -1,0 +1,6 @@
+[package]
+name = "170119-rust-basics-2"
+version = "0.1.0"
+authors = ["Surya Kotamraju <kotamraju@me.com>"]
+
+[dependencies]
