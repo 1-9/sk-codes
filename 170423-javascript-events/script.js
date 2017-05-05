@@ -64,4 +64,27 @@ window.onload = function () {
     console.log(val);
   }
 
+  let s1 = new Set();
+
+  s1.add('nyc');
+  s1.add('sf');
+
+  s1.size;
+
+  s1.delete('nyc');
+  s1.size;
+
+  let dogs = ['hulky', 'minty'];
+  let dogsSet = new Set(dogs);
+  let dogsSetKeys = dogsSet.keys();
+  dogsSet.has('hulky'); // true
+  dogsSet.has('minty'); // true
+  dogsSet.add('july');
+  console.log(dogsSetKeys);
+  console.log(dogsSetKeys.next().value);
+  dogsSet.add('cripto');
+  console.log(dogsSetKeys.next().value);
+  console.log(dogsSetKeys);
+  console.log(dogsSetKeys.next().value);
+
 };
