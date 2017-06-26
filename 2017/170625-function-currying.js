@@ -1,16 +1,51 @@
-///////////////////////////////////////////////////////////////////////////////////
+function add(a, b) {
+  return a + b;
+}
 
-function yack(...args) {
-  return function () {
-    return args.forEach(function (val) {
-      return args[0](val);
-    });
+function addCurry(a) {
+  return function (b) {
+    return a + b;
   }
 }
 
-function add(a, b, c) {
-  return a + b + c;
+function addManyCurry(...args) {
+  return function (...moreArgs) {
+    return moreArgs.length ? addManyCurry(...args.concat(moreArgs)) : args.reduce((acc, val) => acc + val);
+  };
+};
+
+var a1 = addManyCurry(9);
+a1(8)()
+console.log(a1(8)());
+
+console.log(add(2, 3));
+console.log(addCurry(2)(3));
+console.log(addManyCurry(8)(9)(8)(8)(2, 3)());
+console.log(addManyCurry(2)(3)());
+console.log(addManyCurry(8, 2, 3)(9, 1)(8)(3)());
+console.log(addManyCurry(8, 2, 3)(9, 1)(8)(3)());
+
+function addManyCurryProper(fn, ...args) {
+  return args.length >= fn.length ? fn(...args) : (...moreArgs) => addManyCurryProper(fn, ...args, ...moreArgs);
+};
+
+const yack = (fn, ...args) =>
+  args.length >= fn.length ? fn(...args) : (...args2) => yack(fn, ...args, ...args2);
+
+console.log(addManyCurryProper(9)(7, 1)());
+
+var a = addManyCurryProper(add)(2);
+console.log(a()(8));
+
+function addArray(...args) {
+  return args.reduce((acc, val) => acc + val);
 }
+
+console.log(add.length);
+console.log(addArray.length);
+
+console.log(yack(add)(1)(2));
+yack(add)(1) // 6;
 
 console.log(yack(add)(1)(2)(3));
 yack(add)(1) // 6;
