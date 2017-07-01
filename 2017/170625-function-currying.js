@@ -29,6 +29,9 @@ function addManyCurryProper(fn, ...args) {
   return args.length >= fn.length ? fn(...args) : (...moreArgs) => addManyCurryProper(fn, ...args, ...moreArgs);
 };
 
+var a1 = addManyCurryProper(add, 4);
+console.log(a1(3, 4));
+
 const yack = (fn, ...args) =>
   args.length >= fn.length ? fn(...args) : (...args2) => yack(fn, ...args, ...args2);
 
