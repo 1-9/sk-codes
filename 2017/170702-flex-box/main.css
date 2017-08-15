@@ -1,0 +1,38 @@
+ul {
+  padding: 0;
+  border: solid 10px peru;
+  display: flex;
+  height: 400px;
+  justify-content: flex-start;
+}
+
+ul li {
+  list-style: none;
+  color: whitesmoke;
+  flex: 1;
+  font-family: impact;
+  font-size: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li:first-child {
+  background-color: #50514F;
+}
+
+li:nth-child(2) {
+  background-color: #F25F5C;
+}
+
+li:nth-child(3) {
+  background-color: #FFE066;
+}
+
+li:nth-child(4) {
+  background-color: #247BA0;
+}
+
+li:nth-child(5) {
+  background-color: #70C1B3;
+}
