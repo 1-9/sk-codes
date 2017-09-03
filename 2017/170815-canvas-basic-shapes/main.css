@@ -2,9 +2,12 @@ canvas {
   cursor: none;
 }
 
+.score {
+  background-color: yellow;
+}
 .topbar {
   display: flex;
-  background-color: red;
+  background-color: indianred;
   justify-content: space-around;
   align-items: center;
   font-family: monospace;
