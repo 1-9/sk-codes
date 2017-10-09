@@ -36,22 +36,60 @@
 // // you can write to stdout for debugging purposes, e.g.
 // // console.log('this is a debug message');
 
+function check(arr) {
+  let ans = true;
+  return ans;
+}
+
 function solution(A) {
-  let count = 0,
-    ans = "NO";
-  function sub(arr) {
-    if (count <= 10) {
-      return ans;
+  var copyA = () =>
+      A.reduce((acc, val, ind) => {
+        if (ind % 2 === 0 && A[ind + 1]) {
+          acc.push([val, A[ind + 1]]);
+        }
+        return acc;
+      }, []),
+    ans = [];
+
+  function sub(arrCopy, builder) {
+    if (builder.length === arrCopy.length) {
+      ans.push(builder);
     } else {
-      for (let i = 0; i < ans.length; i += 2) {
-        console.log(ans[i]);
-        count++;
-        sub(A);
+      for (var i = 0; i < arrCopy.length; i++) {
+        var copy = arrCopy
+          .slice(0, i)
+          .concat(arrCopy.slice(i + 1))
+          .concat(arrCopy[i]);
+        builder.indexOf(arrCopy[i]) < 0
+          ? sub(copy, arrCopy[i].concat(builder))
+          : "";
       }
     }
   }
-  sub(A);
+  sub(copyA(), []);
+  console.log(ans.length, ans);
 }
 
 let test = [4, 3, 3, 4, 1, 2, 2, 3, 6, 5, 4, 5];
+
 solution(test);
+
+// function allCombos(str) {
+//   let ans = [];
+
+//   function sub(str, builder) {
+//     if (builder.length === str.length) {
+//       ans.push(builder);
+//     } else {
+//       for (var i = 0; i < str.length; i++) {
+//         str = str.slice(0, i) + str.slice(i + 1) + str[i];
+//         builder.indexOf(str[i]) < 0 ? sub(str, str[i] + builder) : "";
+//       }
+//     }
+//   }
+
+//   sub(str, "");
+//   console.log(ans.length, ans);
+// }
+
+// allCombos("abc");
