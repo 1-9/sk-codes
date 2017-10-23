@@ -1,5 +1,6 @@
 window.onload = function() {
-  const canvas = document.querySelector("canvas");
+  const canvas = document.querySelector("canvas"),
+    scoreTag = document.querySelector(".score");
   const ctx = canvas.getContext("2d"),
     snakeSize = 20;
 
@@ -12,6 +13,7 @@ window.onload = function() {
 
   let snakeUnits = 3,
     fps = 10,
+    score = 0,
     previousKeyCode,
     gameOver,
     gameTimeout,
@@ -59,7 +61,18 @@ window.onload = function() {
     console.log("closed timers");
   }
 
-  function checkSnakeEdges() {
+  function checkSnakeSelfCollision() {
+    let x = snakeArray[0].x,
+      y = snakeArray[0].y;
+    for (let i = 1; i < snakeArray.length; i++) {
+      if (snakeArray[i].x === x && snakeArray[i].y === y) {
+        stopGame();
+        break;
+      }
+    }
+  }
+
+  function checkSnakeBorderCollision() {
     let x = snakeArray[0].x,
       y = snakeArray[0].y;
     if (
@@ -70,15 +83,9 @@ window.onload = function() {
     ) {
       stopGame();
     }
-    for (let i = 1; i < snakeArray.length; i++) {
-      if (snakeArray[i].x === x && snakeArray[i].y === y) {
-        stopGame();
-        break;
-      }
-    }
   }
 
-  function checkCollision() {
+  function checkSnakeFoodCollision() {
     if (
       snakeArray.length &&
       snakeArray.food &&
@@ -88,6 +95,8 @@ window.onload = function() {
       snakeArray.food = undefined;
       snakeUnits++;
       fps++;
+      score = score + fps + snakeUnits;
+      scoreTag.innerHTML = "Score : " + score;
     }
   }
 
@@ -103,8 +112,9 @@ window.onload = function() {
         snakeArray.pop();
       }
     }
-    checkCollision();
-    checkSnakeEdges();
+    checkSnakeFoodCollision();
+    checkSnakeSelfCollision();
+    checkSnakeBorderCollision();
     snakeArray.forEach(snakeUnit =>
       ctx.fillRect(snakeUnit.x, snakeUnit.y, snakeSize, snakeSize)
     );
