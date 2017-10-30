@@ -1,0 +1,10 @@
+nav>ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  border: 5px solid red;
+}
+
+nav>ul>li {
+  border: 5px solid green;
+}
