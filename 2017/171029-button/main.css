@@ -1,0 +1,28 @@
+html {
+  font-size: 62.5%;
+}
+
+button {
+  cursor: pointer;
+  background-color: #1473e6;
+  padding: 0.4rem 0.7rem;
+  color: #fff;
+  border-radius: 0.2rem;
+  font-size: 1.6rem;
+  border: .125rem solid transparent;
+  margin-top: 1rem;
+  transition: background-color 100ms;
+}
+
+
+button:hover {
+  background-color: #005abe;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  background-color: #012751;
+}
