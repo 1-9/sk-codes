@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Monaco';
+  margin: 0;
+}
+
+span {
+  font-size: 4rem;
+  animation: red-to-black 3s infinite;
+  color: black;
+  background-color: red;
+}
+
+@keyframes red-to-black {
+  0% {
+    color: black;
+    background-color: red;
+  }
+  100% {
+    color: white;
+    background-color: black;
+  }
+}
