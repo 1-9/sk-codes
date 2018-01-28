@@ -1,9 +1,21 @@
 :root {
-  --pacman-height: 300px;
-  --pacman-width: 300px;
+  --background-color: black;
+  --pacman-height: 200px;
+  --pacman-width: 200px;
+  --pacman-food-width: 30px;
+  --pacman-food-height: 30px;
+}
+
+body {
+  background-color: var(--background-color);
 }
 
 .pacman-container {
+  display: flex;
+  align-items: center;
+}
+
+.pacman {
   width: var(--pacman-width);
   height: var(--pacman-height);
   border-radius: 100%;
@@ -14,19 +26,39 @@
 }
 
 .pacman-mouth {
-  background: green;
-  transform-origin: left top;
-  /* transform: rotate(45deg); */
-  width: calc(var(--pacman-width)/1);
-  height: calc(var(--pacman-height)/1);
-  /* animation: movePacmanMouth 500ms linear infinite alternate; */
+  border-top: calc(var(--pacman-width)/2.5) solid transparent;
+  border-bottom: calc(var(--pacman-width)/2.5) solid transparent;
+  border-right: calc(var(--pacman-width)/2) solid var(--background-color);
+  animation: movePacmanMouth 300ms linear infinite alternate;
 }
 
 @keyframes movePacmanMouth {
   0% {
-    clip-path: inset(200px 0 0 200px);
+    border-top: calc(var(--pacman-width)/2.5) solid transparent;
+    border-bottom: calc(var(--pacman-width)/2.5) solid transparent;
   }
   100% {
-    clip-path: inset(0px 0px 0px 0px);
+    border-top: 0px solid transparent;
+    border-bottom: 0px solid transparent;
+  }
+}
+
+.pacman-food {
+  border-radius: 100%;
+  width: var(--pacman-food-width);
+  height: var(--pacman-food-height);
+  background-color: white;
+  animation: pacmanFood 600ms 300ms infinite;
+}
+
+@keyframes pacmanFood {
+  0% {
+    transform: translate(300px);
+  }
+  90% {
+    visibility: hidden;
+  }
+  100% {
+    transform: translate(-100px, 0);
   }
 }
