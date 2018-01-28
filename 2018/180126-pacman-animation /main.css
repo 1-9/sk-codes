@@ -1,0 +1,32 @@
+:root {
+  --pacman-height: 300px;
+  --pacman-width: 300px;
+}
+
+.pacman-container {
+  width: var(--pacman-width);
+  height: var(--pacman-height);
+  border-radius: 100%;
+  background: red;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.pacman-mouth {
+  background: green;
+  transform-origin: left top;
+  /* transform: rotate(45deg); */
+  width: calc(var(--pacman-width)/1);
+  height: calc(var(--pacman-height)/1);
+  /* animation: movePacmanMouth 500ms linear infinite alternate; */
+}
+
+@keyframes movePacmanMouth {
+  0% {
+    clip-path: inset(200px 0 0 200px);
+  }
+  100% {
+    clip-path: inset(0px 0px 0px 0px);
+  }
+}
