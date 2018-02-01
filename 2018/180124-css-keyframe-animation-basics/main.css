@@ -1,7 +1,7 @@
 .box {
   height: 100px;
   width: 100px;
-  background-color: #2FF3FF;
+  background-color: #2ff3ff;
   animation: test 3s ease-in-out alternate infinite;
 }
 
