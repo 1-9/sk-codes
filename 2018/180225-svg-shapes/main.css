@@ -1,0 +1,19 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+svg:nth-child(3) circle {
+  stroke: green;
+  stroke-width: 15;
+  fill: none;
+}
+
+line {
+  stroke: skyblue;
+  stroke-width: 10;
+}
