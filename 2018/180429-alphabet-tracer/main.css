@@ -1,0 +1,18 @@
+.button-container {
+  position: absolute;
+  top: 5%;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+}
+
+button {
+  cursor: pointer;
+  font-size: 30px;
+  color: grey;
+  background-color: #40d4c7;
+}
+
+button:focus {
+  outline: 0;
+}
