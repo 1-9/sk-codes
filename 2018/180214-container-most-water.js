@@ -9,10 +9,25 @@
  * @return {number}
  */
 var maxArea = function(height) {
-  let water = 0;
-  console.log(13, height);
-  return water;
+  var start = 0,
+    end = height.length - 1,
+    maxArea = 0,
+    currentMaxArea = 0;
+
+  while (start < end) {
+    currentMaxArea = Math.min(height[start], height[end]) * (end - start);
+    maxArea = currentMaxArea > maxArea ? currentMaxArea : maxArea;
+    if (height[end] > height[start]) {
+      start++;
+    } else {
+      end--;
+    }
+  }
+  console.log(maxArea);
+  return maxArea;
 };
 
-maxArea([1,2,4,3]);
-
+maxArea([1, 1]); // 1
+maxArea([0, 2]); // 0
+maxArea([1, 2, 1]); // 2
+maxArea([1, 2, 4, 3]); // 4
