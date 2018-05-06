@@ -2,8 +2,8 @@ function binary(num, ans = '') {
   if (num < 1) {
     return ans;
   } else {
-    const remainder = Math.floor(num % 2).toString();
-    num = num / 2;
+    const remainder = (num % 2).toString();
+    num = Math.floor(num / 2);
     ans = remainder.concat(ans);
     return binary(num, ans);
   }
