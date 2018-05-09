@@ -18,8 +18,45 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+
 var threeSum = function(nums) {
-  console.log(22, nums);
+  let sortedNums = nums.slice().sort((a, b) => a - b);
+  min = sortedNums.shift();
+  max = sortedNums.pop();
+  return threeSumHelper(nums, min, max);
 };
 
-threeSum([-1, 0, 1, 2, -1, -4]);
+function threeSumHelper(nums, min, max, soFar = [], ans = [], hash = {}) {
+  if (soFar.length === 2) {
+    for (let i = 0; i < nums.length; i++) {
+      let current = nums[i];
+      let currentTotal = soFar.reduce((a, b) => a + b, current);
+
+      if (currentTotal === 0) {
+        let possibleAns = [...soFar, current];
+        possibleAns = possibleAns.sort((a, b) => a - b);
+        if (!hash[possibleAns]) {
+          hash[possibleAns] = possibleAns;
+          ans.push(possibleAns);
+        }
+      }
+    }
+  } else {
+    for (let i = 0; i < nums.length; i++) {
+      let current = nums[i];
+      callRecursion(current, i);
+    }
+  }
+
+  function callRecursion(current, i) {
+    soFar.push(current);
+    nums.splice(i, 1);
+    threeSumHelper(nums, min, max, [...soFar], ans, hash);
+    nums.splice(i, 0, current);
+    soFar.pop();
+  }
+  return ans;
+}
+
+console.log(threeSum([-1, 0, 1, 2, -1, -4]));
+console.log(threeSum([-4, -2, -2, -2, 0, 1, 2, 2, 2, 3, 3, 4, 4, 6, 6]));
