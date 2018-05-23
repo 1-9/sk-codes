@@ -15,18 +15,35 @@
  * @return {string[]}
  */
 
-const parens = ['(', ')'];
+const parens = ['(', ')'],
+  matches = {
+    '(': ')'
+  };
 
 var generateParenthesis = function(n, ans = [], current = '') {
   if (current.length === 2 * n) {
-    ans.push(current);
+    if (isValid(current)) {
+      ans.push(current);
+    }
   } else {
     for (let i = 0; i < 2; ++i) {
-      generateParenthesis(n, ans, current + parens[i]);
+      if (current[0] !== parens[1]) {
+        generateParenthesis(n, ans, current + parens[i]);
+      }
     }
   }
-  console.log(ans);
   return ans;
 };
 
-generateParenthesis(3);
+function isValid(s) {
+  return !s.split('').reduce(function(acc, val, ind) {
+    if (matches[acc[acc.length - 1]] === val) {
+      acc.pop();
+    } else {
+      acc.push(val);
+    }
+    return acc;
+  }, []).length;
+}
+
+console.log(generateParenthesis(3)); // [ '((()))', '(()())', '(())()', '()(())', '()()()' ]
