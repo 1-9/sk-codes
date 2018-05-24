@@ -15,35 +15,18 @@
  * @return {string[]}
  */
 
-const parens = ['(', ')'],
-  matches = {
-    '(': ')'
-  };
-
-var generateParenthesis = function(n, ans = [], current = '') {
-  if (current.length === 2 * n) {
-    if (isValid(current)) {
-      ans.push(current);
-    }
+function generateParenthesis(n, left = n, right = n, current = '', ans = []) {
+  if (left === 0 || left > right) {
+    ans.push(current + new Array(right).fill(')').join(''));
+  } else if (left === right) {
+    generateParenthesis(n, left - 1, right, current + '(', ans);
   } else {
-    for (let i = 0; i < 2; ++i) {
-      if (current[0] !== parens[1]) {
-        generateParenthesis(n, ans, current + parens[i]);
-      }
-    }
+    generateParenthesis(n, left - 1, right, current + '(', ans);
+    generateParenthesis(n, left, right - 1, current + ')', ans);
   }
   return ans;
-};
-
-function isValid(s) {
-  return !s.split('').reduce(function(acc, val, ind) {
-    if (matches[acc[acc.length - 1]] === val) {
-      acc.pop();
-    } else {
-      acc.push(val);
-    }
-    return acc;
-  }, []).length;
 }
 
-console.log(generateParenthesis(3)); // [ '((()))', '(()())', '(())()', '()(())', '()()()' ]
+// console.log(generateParenthesis(2)); // [ '(())', '()()' ]
+// console.log(generateParenthesis(3)); // [ '((()))', '(()())', '(())()', '()(())', '()()()' ]
+// console.log(generateParenthesis(4)); // [ '(((())))', '((()()))', '((())())', '((()))()', '(()(()))', '(()()())', '(()())()', '(())(())', '(())()()', '()((()))', '()(()())', '()(())()', '()()(())', '()()()()' ]
