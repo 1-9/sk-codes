@@ -13,46 +13,19 @@ var shiftingLetters = function(str, shifts) {
       sum += shifts[j];
       j++;
     }
-    if (sum > 26) {
+    if (sum > 25) {
       sum = sum % 26;
     }
-    arr[i] += sum;
-  });
-
-  console.log(charCodes);
-  charCodes.forEach((v, i) => {
-    while (v > 121) {
-      v = ((v - 122) % 26) + 96;
+    if (sum + arr[i] > 122) {
+      arr[i] = String.fromCharCode(((sum + arr[i] - 122) % 26) + 96);
+    } else {
+      arr[i] = String.fromCharCode(arr[i] + sum);
     }
-    charCodes[i] = String.fromCharCode(v);
   });
-  console.log(charCodes);
   return charCodes.join('');
 };
 
+shiftingLetters('abc', [3, 5, 9]);
+shiftingLetters('z', [52]);
 shiftingLetters('qoqpvw', [95, 7, 67, 21, 33, 23]); // "cjeozt"
-// shiftingLetters('abc', [3, 5, 9]);
-// shiftingLetters('a', [35]);
-// shiftingLetters('z', [52]);
-// shiftingLetters('bifzhztrynhmlyzfnnev', [
-//   245805103,
-//   837266363,
-//   905484932,
-//   471489242,
-//   397124802,
-//   717670686,
-//   212570096,
-//   88819310,
-//   299353983,
-//   865581180,
-//   63334099,
-//   382078685,
-//   864802579,
-//   186319462,
-//   225206488,
-//   398829626,
-//   584159196,
-//   61152945,
-//   94424902,
-//   53661086
-// ]); // uqciawyyxtrzxtqweuct
+shiftingLetters('a', [35]);
