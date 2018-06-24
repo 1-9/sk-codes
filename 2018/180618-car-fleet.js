@@ -1,21 +1,20 @@
 var carFleet = (module.exports = function(target, position, speed) {
-  let time = [],
-    ans = 0;
+  let time = {},
+    ans = 0,
+    min = 0;
 
-  for (let i = 0; i < position.length; i++) {
-    time[target - position[i]] = (target - position[i]) / speed[i];
+  for (let [ind, val] of position.entries()) {
+    time[target - val] = (target - val) / speed[ind];
   }
 
-  let max = 0;
-
-  for (let i of time) {
-    if (i > max) {
+  for (let t in time) {
+    if (time[t] > min) {
+      min = time[t];
       ans++;
-      max = i;
     }
   }
   return ans;
 });
 
-carFleet(12, [10, 8, 0, 5, 3], [2, 4, 1, 1, 3]);
-carFleet(0, [9], []);
+carFleet(12, [10, 8, 0, 5, 3], [2, 4, 1, 1, 3]); // 3
+carFleet(0, [9], []); // 0
