@@ -1,33 +1,26 @@
 function snake(row, column) {
-  let matrix = [],
-    rowIndex = 0,
-    upper = row - 1,
-    lower = 0,
-    count = 1,
-    down = true;
+  let matrix = new Array(row).fill().map(() => []),
+    counter = 1,
+    direction = true,
+    max = row * column,
+    rowIndex = 0;
 
-  for (let i = 0; i < row; i++) {
-    matrix.push([]);
-  }
-
-  while (count <= row * column) {
-    if (down) {
-      while (lower <= row - 1) {
-        matrix[lower].push(count);
-        count++;
-        lower++;
-      }
-      down = false;
-      lower = 0;
-    } else {
-      while (upper >= 0) {
-        matrix[upper].push(count);
-        count++;
-        upper--;
-      }
-      upper = row - 1;
-      down = true;
+  while (counter <= max) {
+    if (rowIndex < 0) {
+      direction = true;
+      rowIndex++;
     }
+    if (rowIndex === row) {
+      direction = false;
+      rowIndex--;
+    }
+    matrix[rowIndex].push(counter);
+    if (direction) {
+      rowIndex++;
+    } else {
+      rowIndex--;
+    }
+    counter++;
   }
   console.log(matrix);
   return matrix;
