@@ -1,25 +1,21 @@
 function snake(row, column) {
   let matrix = new Array(row).fill().map(() => []),
     counter = 1,
-    direction = true,
+    down = true,
     max = row * column,
     rowIndex = 0;
 
   while (counter <= max) {
     if (rowIndex < 0) {
-      direction = true;
+      down = true;
       rowIndex++;
     }
     if (rowIndex === row) {
-      direction = false;
+      down = false;
       rowIndex--;
     }
     matrix[rowIndex].push(counter);
-    if (direction) {
-      rowIndex++;
-    } else {
-      rowIndex--;
-    }
+    down ? rowIndex++ : rowIndex--;
     counter++;
   }
   console.log(matrix);
