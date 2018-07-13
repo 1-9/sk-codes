@@ -7,7 +7,7 @@ let threeSumClosest = function(nums, target) {
     let left = i + 1,
       right = nums.length - 1;
 
-    while (true) {
+    while (left >= right) {
       let currentSum = calculateSum(nums[i], nums[left], nums[right]),
         difference = Math.abs(currentSum - target);
       if (currentSum === target) {
@@ -17,12 +17,10 @@ let threeSumClosest = function(nums, target) {
       } else if (currentSum > target) {
         right--;
       }
+
       if (difference < minimum) {
         minimum = difference;
         ans = currentSum;
-      }
-      if (left >= right || i >= left) {
-        break;
       }
     }
   }
