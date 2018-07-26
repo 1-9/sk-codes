@@ -1,18 +1,18 @@
 var numMagicSquaresInside = function(grid) {
   let gridCount = 0,
     nums = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
-  for (let i = 0; i < grid.length; i++) {
-    for (let j = 0; j < grid.length; j++) {
-      let current = grid[i][j];
+  for (let row = 0; row < grid.length; row++) {
+    for (let column = 0; column < grid.length; column++) {
+      let current = grid[row][column];
       if (current === 5) {
-        let north = grid[i - 1] && grid[i - 1][j],
-          south = grid[i + 1] && grid[i + 1][j],
-          east = grid[i][j + 1],
-          west = grid[i][j - 1],
-          ne = grid[i - 1] && grid[i - 1][j + 1],
-          se = grid[i + 1] && grid[i + 1][j + 1],
-          nw = grid[i - 1] && grid[i - 1][j - 1],
-          sw = grid[i + 1] && grid[i + 1][j - 1];
+        let north = grid[row - 1] && grid[row - 1][column],
+          south = grid[row + 1] && grid[row + 1][column],
+          east = grid[row][column + 1],
+          west = grid[row][column - 1],
+          ne = grid[row - 1] && grid[row - 1][column + 1],
+          se = grid[row + 1] && grid[row + 1][column + 1],
+          nw = grid[row - 1] && grid[row - 1][column - 1],
+          sw = grid[row + 1] && grid[row + 1][column - 1];
 
         let allNums =
           nums.has(north) &&
